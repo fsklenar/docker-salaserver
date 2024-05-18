@@ -1,5 +1,5 @@
 #!/bin/bash
-docker run -d --name=MuninServer --rm -p 192.168.0.201:8888:8888  \
+docker run -d --name=MuninServer --rm -p 10.192.168.201:8888:8888  \
     -e ALLOWED_HOSTS="0/0" \
     -e HOSTNAME="salaserver" \
     -e TZ="Europe/Berlin" \
