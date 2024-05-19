@@ -6,9 +6,9 @@ public_server="salauser@linuxadmin.sk"
 #params: source_port, dest_port
 function do_port_forward {
   local port
-  port=`ss -nltp | grep "$local_ip:$1" | cut -d ":" -f 2 | cut -d " " -f 1`
-  #do port_forward only when there is still not active port_forward for source port
-  if [[ "$port" != "$1" ]]; then
+  port_forward_exists=`ps -ef | grep "$dest_ip:$2:$local_ip:$1" | grep -v grep`
+  #do port_forward only when there is still not an active port_forward for source port
+  if [[ -z "$port_forward_exists" ]]; then
     logger "RUNALL: Port forward for $1 port"
     ssh -N -R $dest_ip:$2:$local_ip:$1 $public_server &
   fi
