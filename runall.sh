@@ -24,10 +24,10 @@ fi
 #start of containers
 cd /srv/data/docker
 Munin/runit.sh
+#END containers
 
-##port fowards
 logger "RUNALL: port forward at `date`" 
-sleep 1
+sleep 5
 #Munin
 do_port_forward "8888" "8888"
 
