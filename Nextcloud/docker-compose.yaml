@@ -64,38 +64,6 @@ volumes: # If you want to store the data on a different drive, see https://githu
       type: none
       device: /srv/data/docker_data/Nextcloud/data
       o: bind
-  nextcloud_aio_database:
-    name: nextcloud_aio_database
-    driver: local
-    driver_opts:
-      type: none
-      device: /srv/data/docker_data/Nextcloud/database
-      o: bind
-  nextcloud_aio_nextcloud:
-    name: nextcloud_aio_nextcloud
-    driver: local
-    driver_opts:
-      type: none
-      device: /srv/data/docker_data/Nextcloud/nextcloud
-      o: bind
-  nextcloud_aio_database_dump:
-    name: nextcloud_aio_database)dump
-    driver: local
-    driver_opts:
-      type: none
-      device: /srv/data/docker_data/Nextcloud/database_dump
-      o: bind
-
-
-
-#local     nextcloud_aio_apache
-##local     nextcloud_aio_database
-##local     nextcloud_aio_database_dump
-##local     nextcloud_aio_mastercontainer
-##local     nextcloud_aio_nextcloud
-##local     nextcloud_aio_nextcloud_datadir
-#local     nextcloud_aio_redis
-
 
 # # Optional: If you need ipv6, follow step 1 and 2 of https://github.com/nextcloud/all-in-one/blob/main/docker-ipv6-support.md first and then uncomment the below config in order to activate ipv6 for the internal nextcloud-aio network.
 # # Please make sure to uncomment also the networking lines of the mastercontainer above in order to actually create the network with docker-compose
