@@ -12,7 +12,6 @@ cd /srv/data/docker/Nextcloud
 #local     nextcloud_aio_redis
 
 #docker create volume 
-#3ae9c236f2805863491f2c03d50b70408bbb9b67eb1bb739
 
 docker volume create --driver local \
     --opt device=/srv/data/docker_data/Nextcloud/database \
