@@ -31,6 +31,7 @@ logger "RUNALL: port forward at `date`"
 sleep 5
 #Munin
 do_port_forward "8888" "8888"
+#Nextcloud
 do_port_forward "11000" "11000"
 
 
