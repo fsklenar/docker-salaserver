@@ -19,3 +19,11 @@ docker volume create --driver local \
     nextcloud_aio_nextcloud
 
 docker compose -f docker-compose.yaml up -d $@
+docker start nextcloud-aio-apache
+docker start nextcloud-aio-notify-push
+docker start nextcloud-aio-nextcloud
+docker start nextcloud-aio-imaginary
+docker start nextcloud-aio-redis
+docker start nextcloud-aio-database
+#docker stop nextcloud-aio-talk
+#docker stop nextcloud-aio-collabora
