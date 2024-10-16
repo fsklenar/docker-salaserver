@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 #https://github.com/shaf/docker-munin-server
 #opravnania: 105:108 (munin:munin)
@@ -23,9 +23,9 @@ RUN \
 RUN	ln -s /usr/share/munin/plugins/sensors_   /etc/munin/plugins/sensors_fan && \
 	ln -s /usr/share/munin/plugins/sensors_
 
-RUN	mkdir /var/run/munin  && \
-	chown munin:munin /var/run/munin /var/cache/munin/www /var/lib/munin
-
+#RUN	mkdir /var/run/munin  && \
+RUN	chown munin:munin /var/run/munin /var/cache/munin/www /var/lib/munin
+RUN     sed -i 's/host \*/host 0.0.0.0/g' /etc/munin/munin-node.conf
 
 ADD ./conf/start.sh /
 ADD ./conf/apache24.conf /etc/munin/
