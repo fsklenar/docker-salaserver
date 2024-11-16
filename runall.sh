@@ -24,6 +24,7 @@ fi
 #start of containers
 cd /srv/data/docker
 Munin/runit.sh
+Apache2/runit.sh
 ##Nextcloud/runit.sh
 #END containers
 
