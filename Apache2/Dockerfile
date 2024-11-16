@@ -7,4 +7,8 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y apache2  && \
     apt-get clean && rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
+ADD ./start.sh /
+
+CMD ["/start.sh"]
+
 EXPOSE 80
