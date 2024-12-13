@@ -25,15 +25,11 @@ fi
 cd /srv/data/docker
 Munin/runit.sh
 Apache2/runit.sh
-##Nextcloud/runit.sh
 #END containers
 
 logger "RUNALL: port forward at `date`" 
 sleep 5
 #Munin
 do_port_forward "8888" "8888"
-#Nextcloud
-##do_port_forward "11000" "11000"
-
 
 logger "RUNALL: finished at `date`" 
