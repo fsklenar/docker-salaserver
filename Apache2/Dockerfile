@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM ubuntu:resolute
 
 ENV HOSTNAME="salaserver" TZ="Europe/Berlin"
 
