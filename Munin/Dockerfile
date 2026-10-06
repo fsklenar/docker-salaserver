@@ -28,7 +28,8 @@ RUN	chown munin:munin /var/run/munin /var/cache/munin/www /var/lib/munin
 RUN     sed -i 's/host \*/host 0.0.0.0/g' /etc/munin/munin-node.conf
 
 ADD ./conf/start.sh /
-ADD ./conf/apache24.conf /etc/munin/
+COPY ./conf/apache24.conf /etc/munin/
+#COPY ./conf/apache2.conf /etc/apache2/apache2.conf
 #ADD ./conf/plugins/gitlab_shm /etc/munin/plugins
 
 #RUN chmod +rx /etc/munin/plugins/gitlab_shm
